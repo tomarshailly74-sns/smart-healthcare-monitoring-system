@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard | Smart Healthcare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-symbol">+</span>
+                <span>Smart Healthcare</span>
+            </div>
+            <a href="index.html">← Home</a>
+        </div>
+    </header>
+
+    <main class="home-container">
+        <section class="intro">
+            <p class="small-heading">DOCTOR PORTAL</p>
+            <h1>Doctor Dashboard</h1>
+            <p class="intro-text">
+                View patient health records and manage appointment requests.
+            </p>
+            <p id="doctorWelcome"></p>
+            <button id="doctorLogoutBtn" type="button">Log Out</button>
+        </section>
+
+        <section class="section">
+            <h2>Patient Health Records</h2>
+            <p>Review health readings submitted by patients.</p>
+            <button id="refreshRecordsBtn" type="button">Refresh Records</button>
+            <p id="recordsStatus" role="status"></p>
+            <div id="doctorRecords"></div>
+        </section>
+
+        <section class="section">
+            <h2>Appointment Requests</h2>
+            <p>Review appointment requests and update their status.</p>
+            <button id="refreshAppointmentsBtn" type="button">Refresh Appointments</button>
+            <p id="appointmentsStatus" role="status"></p>
+            <div id="doctorAppointments"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Smart Healthcare Monitoring System</p>
+        <p>Doctor Portal</p>
+    </footer>
+
+    <script type="module" src="doctor-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal | Smart Healthcare</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-symbol">+</span>
+                <span>Smart Healthcare</span>
+            </div>
+            <a href="index.html">← Home</a>
+        </div>
+    </header>
+
+    <main class="home-container">
+
+        <!-- Patient Login -->
+        <section class="section" id="patientLogin">
+            <h1>Patient Login</h1>
+            <p>Enter your details to access the patient dashboard.</p>
+
+            <div class="form-group">
+                <label for="patientNameLogin">Patient Name</label>
+                <input
+                    type="text"
+                    id="patientNameLogin"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="patientIdLogin">Patient ID</label>
+                <input
+                    type="text"
+                    id="patientIdLogin"
+                    placeholder="Enter your Patient ID"
+                    required
+                >
+            </div>
+
+            <button id="patientLoginBtn" type="button">
+                Continue to Dashboard
+            </button>
+
+            <p id="patientLoginStatus" role="status"></p>
+        </section>
+
+        <!-- Patient Dashboard -->
+        <div id="patientDashboard" style="display: none;">
+
+            <section class="intro">
+                <p class="small-heading">PATIENT PORTAL</p>
+                <h1>Health Dashboard</h1>
+                <p class="intro-text">
+                    Record your health readings and review your saved information.
+                </p>
+
+                <p>
+                    <strong>Patient:</strong>
+                    <span id="welcomePatientName"></span>
+                </p>
+
+                <p>
+                    <strong>Patient ID:</strong>
+                    <span id="welcomePatientId"></span>
+                </p>
+
+                <button id="patientLogoutBtn" type="button">Log Out</button>
+            </section>
+
+            <!-- Patient Information -->
+            <section class="section">
+                <h2>Patient Information</h2>
+
+                <div class="form-group">
+                    <label for="patientName">Patient Name</label>
+                    <input type="text" id="patientName"
+                           placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="patientId">Patient ID</label>
+                    <input type="text" id="patientId"
+                           placeholder="Patient ID" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" min="1" max="120"
+                           placeholder="Enter your age">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email">
+                </div>
+            </section>
+
+            <!-- Health Monitoring -->
+            <section class="section">
+                <h2>Health Monitoring</h2>
+                <p>Enter readings measured using your health devices.</p>
+
+                <div class="form-group">
+                    <label for="heartRate">Heart Rate (BPM)</label>
+                    <input type="number" id="heartRate" min="1"
+                           placeholder="Example: 80">
+                </div>
+
+                <div class="form-group">
+                    <label for="spo2">SpO₂ (%)</label>
+                    <input type="number" id="spo2" min="1" max="100"
+                           placeholder="Example: 98">
+                </div>
+
+                <div class="form-group">
+                    <label for="temperature">Temperature (°F)</label>
+                    <input type="number" id="temperature" step="0.1"
+                           placeholder="Example: 98.6">
+                </div>
+
+                <div class="form-group">
+                    <label for="bloodPressure">Blood Pressure (mmHg)</label>
+                    <input type="text" id="bloodPressure"
+                           placeholder="Example: 120/80">
+                </div>
+
+                <button id="checkHealthBtn" type="button">Check Health</button>
+
+                <h3>Health Check Result</h3>
+                <p id="healthStatus" role="status"></p>
+            </section>
+
+            <!-- Health History -->
+            <section class="section">
+                <h2>Health History</h2>
+                <p>View your previously saved health readings.</p>
+
+                <button id="historyBtn" type="button">
+                    View Health History
+                </button>
+
+                <div id="healthHistory"></div>
+            </section>
+
+            <!-- Health Chart -->
+            <section class="section">
+                <h2>Health Chart</h2>
+                <p>Visual summary of saved health readings.</p>
+
+                <canvas id="healthChart"></canvas>
+            </section>
+
+            <!-- Appointment Booking -->
+            <section class="section">
+                <h2>Book a Doctor Appointment</h2>
+                <p>Submit a request for your preferred date and time.</p>
+
+                <div class="form-group">
+                    <label for="appointmentDoctor">Doctor / Specialist</label>
+                    <select id="appointmentDoctor">
+                        <option value="">Select a specialist</option>
+                        <option value="General Physician">General Physician</option>
+                        <option value="Cardiologist">Cardiologist</option>
+                        <option value="Other Specialist">Other Specialist</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentDate">Appointment Date</label>
+                    <input type="date" id="appointmentDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentTime">Preferred Time</label>
+                    <input type="time" id="appointmentTime">
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentReason">Reason for Appointment</label>
+                    <textarea id="appointmentReason" rows="3"
+                              placeholder="Enter the reason for your visit"></textarea>
+                </div>
+
+                <button id="bookAppointmentBtn" type="button">
+                    Request Appointment
+                </button>
+
+                <p id="appointmentStatus" role="status"></p>
+
+                <h3>My Appointments</h3>
+                <button id="myAppointmentsBtn" type="button">
+                    View My Appointments
+                </button>
+
+                <div id="myAppointments"></div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Smart Healthcare Monitoring System</p>
+        <p>BCA Academic Project</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>

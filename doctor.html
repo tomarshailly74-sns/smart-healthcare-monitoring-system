@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login | Smart Healthcare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-symbol">+</span>
+                <span>Smart Healthcare</span>
+            </div>
+            <a href="index.html">← Home</a>
+        </div>
+    </header>
+
+    <main class="home-container">
+
+        <section class="section">
+            <h1>Doctor Login</h1>
+            <p>Sign in to access the doctor dashboard.</p>
+
+            <div class="form-group">
+                <label for="doctorEmail">Email Address</label>
+                <input
+                    type="email"
+                    id="doctorEmail"
+                    placeholder="Enter your registered email"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="doctorPassword">Password</label>
+                <input
+                    type="password"
+                    id="doctorPassword"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <button id="doctorLoginBtn" type="button">Login</button>
+
+            <p id="loginStatus" role="status"></p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Smart Healthcare Monitoring System</p>
+        <p>Doctor Portal</p>
+    </footer>
+
+    <script type="module" src="doctor.js"></script>
+
+</body>
+</html>
